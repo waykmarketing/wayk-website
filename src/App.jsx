@@ -40,7 +40,7 @@ function App() {
   };
 
   return (
-    <div style={{ minHeight: "100vh", backgroundColor: "#0a0a0a", color: "white", fontFamily: "system-ui, -apple-system, sans-serif" }}>
+    <div style={{ minHeight: "100vh", backgroundColor: "#0a0a0a", color: "white", fontFamily: "system-ui, -apple-system, sans-serif", overflowX: "hidden" }}>
       
       {/* Nav */}
       <nav style={{ 
@@ -66,33 +66,33 @@ function App() {
       </nav>
 
       {/* Hero */}
-      <section style={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", padding: isMobile ? "120px 0 40px" : "140px 0 60px", position: "relative" }}>
+      <section style={{ height: isMobile ? "auto" : "100vh", minHeight: isMobile ? "100vh" : "auto", display: "flex", flexDirection: "column", justifyContent: "center", padding: isMobile ? "120px 24px 60px" : "0", position: "relative", boxSizing: "border-box" }}>
         <div style={{ position: "absolute", width: isMobile ? 400 : 700, height: isMobile ? 400 : 700, borderRadius: "50%", background: "radial-gradient(circle, rgba(163,30,34,0.25) 0%, transparent 70%)", left: isMobile ? -200 : -250, top: 50, filter: "blur(60px)" }} />
-        <div style={{ maxWidth: 1100, margin: "0 auto", position: "relative", zIndex: 10, width: "100%", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", padding: isMobile ? "0 24px" : "0" }}>
-          <h1 style={{ fontSize: isMobile ? 48 : 100, fontWeight: 700, lineHeight: 1.05, marginBottom: isMobile ? 20 : 30, letterSpacing: "-0.03em" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", position: "relative", zIndex: 10, width: "100%", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", padding: isMobile ? "0" : "0 20px" }}>
+          <h1 style={{ fontSize: isMobile ? 48 : 80, fontWeight: 700, lineHeight: 1.05, marginBottom: isMobile ? 20 : 20, letterSpacing: "-0.03em" }}>
             <span style={{ display: "block" }}>Your brand.</span>
             <span style={{ display: "block", background: "linear-gradient(to right, #ef4444, #f87171, #dc2626)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Their feed.</span>
             <span style={{ display: "block" }}>Millions watching.</span>
           </h1>
-          <p style={{ fontSize: isMobile ? 18 : 26, color: "#9ca3af", maxWidth: 680, marginBottom: isMobile ? 32 : 50, lineHeight: 1.5 }}>We work with the creators behind the memes and trends. People who actually influence others, not just influencers. Content that performs.</p>
-          <div style={{ display: "flex", flexDirection: isMobile ? "column" : "row", gap: isMobile ? 12 : 20, marginBottom: isMobile ? 40 : 60, justifyContent: "center", width: isMobile ? "100%" : "auto" }}>
-            <button onClick={() => scrollTo(ctaRef)} style={{ padding: isMobile ? "16px 32px" : "20px 44px", backgroundColor: "white", color: "#0a0a0a", fontWeight: 600, borderRadius: 9999, fontSize: isMobile ? 16 : 18, border: "none", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 10 }}>
-              Get Started <span style={{ fontSize: isMobile ? 18 : 22 }}>→</span>
+          <p style={{ fontSize: isMobile ? 18 : 22, color: "#9ca3af", maxWidth: 680, marginBottom: isMobile ? 32 : 30, lineHeight: 1.5 }}>We work with the creators behind the memes and trends. People who actually influence others, not just influencers. Content that performs.</p>
+          <div style={{ display: "flex", flexDirection: isMobile ? "column" : "row", gap: isMobile ? 12 : 20, marginBottom: isMobile ? 40 : 30, justifyContent: "center", width: isMobile ? "100%" : "auto" }}>
+            <button onClick={() => scrollTo(ctaRef)} style={{ padding: isMobile ? "16px 32px" : "16px 36px", backgroundColor: "white", color: "#0a0a0a", fontWeight: 600, borderRadius: 9999, fontSize: isMobile ? 16 : 17, border: "none", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 10 }}>
+              Get Started <span style={{ fontSize: isMobile ? 18 : 20 }}>→</span>
             </button>
-            <button onClick={() => scrollTo(rosterRef)} style={{ padding: isMobile ? "16px 32px" : "20px 44px", backgroundColor: "transparent", color: "white", fontWeight: 500, borderRadius: 9999, fontSize: isMobile ? 16 : 18, border: "1px solid rgba(255,255,255,0.2)", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 10 }}>
+            <button onClick={() => scrollTo(rosterRef)} style={{ padding: isMobile ? "16px 32px" : "16px 36px", backgroundColor: "transparent", color: "white", fontWeight: 500, borderRadius: 9999, fontSize: isMobile ? 16 : 17, border: "1px solid rgba(255,255,255,0.2)", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 10 }}>
               See the Roster
             </button>
           </div>
-          <div style={{ display: "flex", gap: isMobile ? 40 : 100, justifyContent: "center", flexWrap: "wrap" }}>
-            <div><div style={{ fontSize: isMobile ? 40 : 64, fontWeight: 700 }}>10B+</div><div style={{ fontSize: isMobile ? 13 : 15, color: "#6b7280", textTransform: "uppercase", letterSpacing: "0.1em" }}>Views</div></div>
-            <div><div style={{ fontSize: isMobile ? 40 : 64, fontWeight: 700 }}>20M+</div><div style={{ fontSize: isMobile ? 13 : 15, color: "#6b7280", textTransform: "uppercase", letterSpacing: "0.1em" }}>Followers</div></div>
-            <div><div style={{ fontSize: isMobile ? 40 : 64, fontWeight: 700 }}>50+</div><div style={{ fontSize: isMobile ? 13 : 15, color: "#6b7280", textTransform: "uppercase", letterSpacing: "0.1em" }}>Creators</div></div>
+          <div style={{ display: "flex", gap: isMobile ? 40 : 80, justifyContent: "center", flexWrap: "wrap" }}>
+            <div><div style={{ fontSize: isMobile ? 40 : 52, fontWeight: 700 }}>10B+</div><div style={{ fontSize: isMobile ? 13 : 14, color: "#6b7280", textTransform: "uppercase", letterSpacing: "0.1em" }}>Views</div></div>
+            <div><div style={{ fontSize: isMobile ? 40 : 52, fontWeight: 700 }}>20M+</div><div style={{ fontSize: isMobile ? 13 : 14, color: "#6b7280", textTransform: "uppercase", letterSpacing: "0.1em" }}>Followers</div></div>
+            <div><div style={{ fontSize: isMobile ? 40 : 52, fontWeight: 700 }}>50+</div><div style={{ fontSize: isMobile ? 13 : 14, color: "#6b7280", textTransform: "uppercase", letterSpacing: "0.1em" }}>Creators</div></div>
           </div>
         </div>
       </section>
 
       {/* Why Us */}
-      <section style={{ padding: isMobile ? "40px 24px 80px" : "60px 80px 140px" }}>
+      <section style={{ padding: isMobile ? "80px 24px" : "60px 80px 140px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <h2 style={{ fontSize: isMobile ? 40 : 64, fontWeight: 700, marginBottom: 16, textAlign: isMobile ? "center" : "left" }}>Why Wayk</h2>
           <p style={{ fontSize: isMobile ? 18 : 22, color: "#9ca3af", marginBottom: isMobile ? 40 : 60, textAlign: isMobile ? "center" : "left" }}>Work directly with the source.</p>
@@ -199,14 +199,14 @@ function App() {
                       const isHovered = hoveredCard === i;
                       const positions = isHovered 
                         ? [
-                            { rotate: -25, x: -120, y: -20 },
-                            { rotate: 0, x: -40, y: 10 },
-                            { rotate: 25, x: 40, y: -10 }
+                            { rotate: -20, x: -140, y: 0 },
+                            { rotate: 20, x: 140, y: 0 },
+                            { rotate: 0, x: 0, y: 0 }
                           ]
                         : [
-                            { rotate: -8, x: -15, y: 5 },
-                            { rotate: 0, x: 0, y: 0 },
-                            { rotate: 8, x: 15, y: -5 }
+                            { rotate: -6, x: -20, y: 0 },
+                            { rotate: 6, x: 20, y: 0 },
+                            { rotate: 0, x: 0, y: 0 }
                           ];
                       const pos = positions[j];
                       const zIndexes = [1, 2, 3];
@@ -217,10 +217,10 @@ function App() {
                           alt={`Creator ${j + 1}`}
                           style={{ 
                             position: "absolute",
-                            width: isHovered ? "70%" : "65%",
-                            height: isHovered ? "70%" : "65%",
+                            width: "100%",
+                            height: "100%",
                             objectFit: "cover",
-                            borderRadius: isMobile ? 12 : 16,
+                            borderRadius: isMobile ? 16 : 24,
                             border: "3px solid rgba(255,255,255,0.15)",
                             boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
                             transform: `rotate(${pos.rotate}deg) translateX(${pos.x}px) translateY(${pos.y}px)`,
