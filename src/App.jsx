@@ -91,27 +91,7 @@ function App() {
         </div>
       </section>
 
-      {/* Why Us */}
-      <section style={{ padding: isMobile ? "60px 20px" : "60px 80px 140px", overflow: "hidden" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <h2 style={{ fontSize: isMobile ? 40 : 64, fontWeight: 700, marginBottom: 16, textAlign: isMobile ? "center" : "left" }}>Why Wayk</h2>
-          <p style={{ fontSize: isMobile ? 18 : 22, color: "#9ca3af", marginBottom: isMobile ? 40 : 60, textAlign: isMobile ? "center" : "left" }}>Work directly with the source.</p>
-          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 20 : 30 }}>
-            {[
-              { icon: "⚡", title: "Trend starters", desc: "Our creators make the sounds and formats you see everywhere. They don't follow trends—they set them." },
-              { icon: "📈", title: "Engagement that converts", desc: "Content people actually watch, share, and act on. Not polished ads that get skipped." },
-              { icon: "👥", title: "Major metro reach", desc: "Strong audiences in LA, NYC, Miami and other key markets where culture happens." },
-              { icon: "🎯", title: "Direct communication", desc: "No account managers or layers. You talk to us, we handle the rest." }
-            ].map((f, i) => (
-              <div key={i} style={{ padding: isMobile ? 28 : 44, borderRadius: isMobile ? 20 : 28, backgroundColor: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
-                <div style={{ width: isMobile ? 50 : 60, height: isMobile ? 50 : 60, borderRadius: isMobile ? 14 : 18, backgroundColor: "rgba(220,38,38,0.1)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: isMobile ? 20 : 28, fontSize: isMobile ? 24 : 28 }}>{f.icon}</div>
-                <h3 style={{ fontSize: isMobile ? 20 : 24, fontWeight: 600, marginBottom: isMobile ? 10 : 14 }}>{f.title}</h3>
-                <p style={{ color: "#9ca3af", fontSize: isMobile ? 15 : 17, lineHeight: 1.6 }}>{f.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Roster */}
       <section ref={rosterRef} style={{ padding: isMobile ? "60px 20px" : "140px 80px", overflow: "hidden" }}>
@@ -293,8 +273,13 @@ function App() {
       <footer style={{ padding: isMobile ? "40px 20px" : "50px 80px", borderTop: "1px solid rgba(255,255,255,0.05)", overflow: "hidden" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", flexDirection: isMobile ? "column" : "row", justifyContent: "space-between", alignItems: "center", gap: isMobile ? 20 : 0 }}>
           <img src="/images/W wayk.png" alt="Wayk" style={{ height: isMobile ? 60 : 80 }} />
-          <div style={{ color: "#9ca3af", fontSize: isMobile ? 14 : 15 }}>📍 LA • NYC • Miami</div>
-          <a href="mailto:marketing@wayktalent.com" style={{ color: "#9ca3af", fontSize: isMobile ? 48 : 60, textDecoration: "none", lineHeight: 1 }}>✉️</a>
+          <div style={{ color: "#9ca3af", fontSize: isMobile ? 14 : 15 }}>LA • NYC • Miami</div>
+          <a href="mailto:marketing@wayktalent.com" style={{ color: "#9ca3af", fontSize: isMobile ? 48 : 60, textDecoration: "none", lineHeight: 1, display: "flex", alignItems: "center" }}>
+            <svg width={isMobile ? 48 : 60} height={isMobile ? 48 : 60} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="M22 6L12 13L2 6"/>
+            </svg>
+          </a>
         </div>
         <div style={{ maxWidth: 1100, margin: "40px auto 0", paddingTop: isMobile ? 24 : 40, borderTop: "1px solid rgba(255,255,255,0.05)", textAlign: "center", fontSize: isMobile ? 12 : 14, color: "#4b5563" }}>© 2025 Wayk Talent</div>
       </footer>
