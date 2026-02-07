@@ -58,7 +58,7 @@ function App() {
         transition: "all 0.5s", 
         boxSizing: "border-box" 
       }}>
-        <img src="https://i.ibb.co/04BBhtv/W-wayk.png" alt="Wayk" style={{ height: isMobile ? 28 : 36, cursor: "pointer" }} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} />
+        <img src="/images/W wayk.png" alt="Wayk" style={{ height: isMobile ? 38 : 49, cursor: "pointer" }} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} />
         <div style={{ display: "flex", alignItems: "center", gap: isMobile ? 16 : 40 }}>
           {!isMobile && <button onClick={() => scrollTo(rosterRef)} style={{ fontSize: 15, color: "#d1d5db", background: "none", border: "none", cursor: "pointer" }}>Roster</button>}
           <button onClick={() => scrollTo(ctaRef)} style={{ padding: isMobile ? "10px 20px" : "14px 28px", backgroundColor: "white", color: "#0a0a0a", fontWeight: 600, borderRadius: 9999, fontSize: isMobile ? 13 : 15, border: "none", cursor: "pointer" }}>Work With Us</button>
@@ -125,15 +125,15 @@ function App() {
           </div>
           <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "1fr 1fr 1fr", gap: isMobile ? 16 : 28 }}>
             {[
-              { name: "Haskell", img: "/images/haskell.jpg", followers: "1.7M", engagement: "10.7%" },
-              { name: "Diddybop", img: "/images/diddybop.jpg", followers: "2.5M", engagement: "19.7%" },
-              { name: "Colin Meyers", img: "/images/colin.jpg", followers: "1.8M", engagement: "12.2%" },
-              { name: "Kiid Katze", img: "/images/kiidkatze.jpg", followers: "2.5M", engagement: "16.1%" },
-              { name: "Ryan Tang", img: "/images/ryantang.jpg", followers: "4.6M", engagement: "11.5%" },
+              { name: "Haskell", img: "/images/haskell.png", followers: "1.7M", engagement: "10.7%" },
+              { name: "Diddybop", img: "/images/diddybop.webp", followers: "2.5M", engagement: "19.7%" },
+              { name: "Colin Meyers", img: "/images/colin.webp", followers: "1.8M", engagement: "12.2%" },
+              { name: "Kiid Katze", img: "/images/katze.webp", followers: "2.5M", engagement: "16.1%" },
+              { name: "Ryan Tang", img: "/images/ryan.webp", followers: "4.6M", engagement: "11.5%" },
               { name: "30+ More", imgs: [
-                "/images/extra1.jpg",
-                "/images/extra2.jpg",
-                "/images/extra3.jpg"
+                "/images/geo.jpeg",
+                "/images/myer.webp",
+                "/images/Mr-Spermracing.png"
               ]}
             ].map((creator, i) => (
               <div 
@@ -277,7 +277,7 @@ function App() {
       {/* Footer */}
       <footer style={{ padding: isMobile ? "40px 24px" : "50px 80px", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", flexDirection: isMobile ? "column" : "row", justifyContent: "space-between", alignItems: "center", gap: isMobile ? 20 : 0 }}>
-          <img src="https://i.ibb.co/04BBhtv/W-wayk.png" alt="Wayk" style={{ height: isMobile ? 28 : 36 }} />
+          <img src="/images/W wayk.png" alt="Wayk" style={{ height: isMobile ? 38 : 49 }} />
           <div style={{ color: "#9ca3af", fontSize: isMobile ? 14 : 15 }}>📍 LA • NYC • Miami</div>
           <a href="mailto:hello@wayk.agency" style={{ color: "#9ca3af", fontSize: 20, textDecoration: "none" }}>✉️</a>
         </div>
