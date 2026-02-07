@@ -58,7 +58,7 @@ function App() {
         transition: "all 0.5s", 
         boxSizing: "border-box" 
       }}>
-        <img src="/images/W wayk.png" alt="Wayk" style={{ height: isMobile ? 38 : 49, cursor: "pointer" }} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} />
+        <img src="/images/W wayk.png" alt="Wayk" style={{ height: isMobile ? 60 : 80, cursor: "pointer" }} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} />
         <div style={{ display: "flex", alignItems: "center", gap: isMobile ? 16 : 40 }}>
           {!isMobile && <button onClick={() => scrollTo(rosterRef)} style={{ fontSize: 15, color: "#d1d5db", background: "none", border: "none", cursor: "pointer" }}>Roster</button>}
           <button onClick={() => scrollTo(ctaRef)} style={{ padding: isMobile ? "10px 20px" : "14px 28px", backgroundColor: "white", color: "#0a0a0a", fontWeight: 600, borderRadius: 9999, fontSize: isMobile ? 13 : 15, border: "none", cursor: "pointer" }}>Work With Us</button>
@@ -66,16 +66,16 @@ function App() {
       </nav>
 
       {/* Hero */}
-      <section style={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", padding: isMobile ? "120px 24px 60px" : "140px 80px 100px", position: "relative" }}>
+      <section style={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", padding: isMobile ? "120px 0 40px" : "140px 0 60px", position: "relative" }}>
         <div style={{ position: "absolute", width: isMobile ? 400 : 700, height: isMobile ? 400 : 700, borderRadius: "50%", background: "radial-gradient(circle, rgba(163,30,34,0.25) 0%, transparent 70%)", left: isMobile ? -200 : -250, top: 50, filter: "blur(60px)" }} />
-        <div style={{ maxWidth: 1100, margin: "0 auto", position: "relative", zIndex: 10, width: "100%", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", position: "relative", zIndex: 10, width: "100%", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", padding: isMobile ? "0 24px" : "0" }}>
           <h1 style={{ fontSize: isMobile ? 48 : 100, fontWeight: 700, lineHeight: 1.05, marginBottom: isMobile ? 20 : 30, letterSpacing: "-0.03em" }}>
             <span style={{ display: "block" }}>Your brand.</span>
             <span style={{ display: "block", background: "linear-gradient(to right, #ef4444, #f87171, #dc2626)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Their feed.</span>
             <span style={{ display: "block" }}>Millions watching.</span>
           </h1>
-          <p style={{ fontSize: isMobile ? 18 : 26, color: "#9ca3af", maxWidth: 680, marginBottom: isMobile ? 32 : 50, lineHeight: 1.5, padding: isMobile ? "0 10px" : 0 }}>We work with the creators behind the memes and trends. People who actually influence others, not just influencers. Content that performs.</p>
-          <div style={{ display: "flex", flexDirection: isMobile ? "column" : "row", gap: isMobile ? 12 : 20, marginBottom: isMobile ? 50 : 80, justifyContent: "center", width: isMobile ? "100%" : "auto" }}>
+          <p style={{ fontSize: isMobile ? 18 : 26, color: "#9ca3af", maxWidth: 680, marginBottom: isMobile ? 32 : 50, lineHeight: 1.5 }}>We work with the creators behind the memes and trends. People who actually influence others, not just influencers. Content that performs.</p>
+          <div style={{ display: "flex", flexDirection: isMobile ? "column" : "row", gap: isMobile ? 12 : 20, marginBottom: isMobile ? 40 : 60, justifyContent: "center", width: isMobile ? "100%" : "auto" }}>
             <button onClick={() => scrollTo(ctaRef)} style={{ padding: isMobile ? "16px 32px" : "20px 44px", backgroundColor: "white", color: "#0a0a0a", fontWeight: 600, borderRadius: 9999, fontSize: isMobile ? 16 : 18, border: "none", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 10 }}>
               Get Started <span style={{ fontSize: isMobile ? 18 : 22 }}>→</span>
             </button>
@@ -92,7 +92,7 @@ function App() {
       </section>
 
       {/* Why Us */}
-      <section style={{ padding: isMobile ? "80px 24px" : "140px 80px" }}>
+      <section style={{ padding: isMobile ? "40px 24px 80px" : "60px 80px 140px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <h2 style={{ fontSize: isMobile ? 40 : 64, fontWeight: 700, marginBottom: 16, textAlign: isMobile ? "center" : "left" }}>Why Wayk</h2>
           <p style={{ fontSize: isMobile ? 18 : 22, color: "#9ca3af", marginBottom: isMobile ? 40 : 60, textAlign: isMobile ? "center" : "left" }}>Work directly with the source.</p>
@@ -123,7 +123,7 @@ function App() {
             </div>
             <button onClick={() => scrollTo(ctaRef)} style={{ display: "flex", alignItems: "center", gap: 8, color: "#ef4444", fontWeight: 500, background: "none", border: "none", cursor: "pointer", fontSize: 17 }}>Full roster →</button>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "1fr 1fr 1fr", gap: isMobile ? 16 : 28 }}>
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "1fr 1fr 1fr", gap: isMobile ? 16 : 28, position: "relative" }}>
             {[
               { name: "Haskell", img: "/images/haskell.png", followers: "1.7M", engagement: "10.7%" },
               { name: "Diddybop", img: "/images/diddybop.webp", followers: "2.5M", engagement: "19.7%" },
@@ -147,11 +147,11 @@ function App() {
                   justifyContent: "center", 
                   border: "1px solid rgba(255,255,255,0.05)",
                   position: "relative",
-                  overflow: "hidden",
-                  transform: hoveredCard === i ? "scale(1.05)" : "scale(1)",
-                  boxShadow: hoveredCard === i ? "0 20px 40px rgba(0,0,0,0.4)" : "none",
+                  overflow: creator.imgs ? "visible" : "hidden",
+                  transform: hoveredCard === i && !creator.imgs ? "scale(1.05)" : "scale(1)",
+                  boxShadow: hoveredCard === i && !creator.imgs ? "0 20px 40px rgba(0,0,0,0.4)" : "none",
                   transition: "transform 0.3s ease, box-shadow 0.3s ease",
-                  zIndex: hoveredCard === i ? 10 : 1
+                  zIndex: hoveredCard === i ? 20 : 1
                 }}
                 onMouseEnter={() => setHoveredCard(i)}
                 onMouseLeave={() => setHoveredCard(null)}
@@ -195,27 +195,42 @@ function App() {
                   </>
                 ) : (
                   <div style={{ position: "relative", width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    {creator.imgs.map((img, j) => (
-                      <img 
-                        key={j}
-                        src={img} 
-                        alt={`Creator ${j + 1}`}
-                        style={{ 
-                          position: "absolute",
-                          width: "60%",
-                          height: "60%",
-                          objectFit: "cover",
-                          borderRadius: isMobile ? 12 : 16,
-                          border: "2px solid rgba(255,255,255,0.1)",
-                          transform: hoveredCard === i 
-                            ? `rotate(${(j - 1) * 15}deg) translateX(${(j - 1) * 30}px) scale(1.05)` 
-                            : `rotate(${(j - 1) * 5}deg) translateX(${(j - 1) * 10}px)`,
-                          transition: "transform 0.4s ease",
-                          zIndex: 3 - j,
-                          filter: hoveredCard === i ? "brightness(1)" : "brightness(0.7)"
-                        }} 
-                      />
-                    ))}
+                    {creator.imgs.map((img, j) => {
+                      const isHovered = hoveredCard === i;
+                      const positions = isHovered 
+                        ? [
+                            { rotate: -25, x: -120, y: -20 },
+                            { rotate: 0, x: -40, y: 10 },
+                            { rotate: 25, x: 40, y: -10 }
+                          ]
+                        : [
+                            { rotate: -8, x: -15, y: 5 },
+                            { rotate: 0, x: 0, y: 0 },
+                            { rotate: 8, x: 15, y: -5 }
+                          ];
+                      const pos = positions[j];
+                      const zIndexes = [1, 2, 3];
+                      return (
+                        <img 
+                          key={j}
+                          src={img} 
+                          alt={`Creator ${j + 1}`}
+                          style={{ 
+                            position: "absolute",
+                            width: isHovered ? "70%" : "65%",
+                            height: isHovered ? "70%" : "65%",
+                            objectFit: "cover",
+                            borderRadius: isMobile ? 12 : 16,
+                            border: "3px solid rgba(255,255,255,0.15)",
+                            boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
+                            transform: `rotate(${pos.rotate}deg) translateX(${pos.x}px) translateY(${pos.y}px)`,
+                            transition: "all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)",
+                            zIndex: zIndexes[j],
+                            filter: isHovered ? "brightness(1.1)" : "brightness(0.7)"
+                          }} 
+                        />
+                      );
+                    })}
                     <div style={{
                       position: "absolute",
                       bottom: isMobile ? 16 : 20,
@@ -277,7 +292,7 @@ function App() {
       {/* Footer */}
       <footer style={{ padding: isMobile ? "40px 24px" : "50px 80px", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", flexDirection: isMobile ? "column" : "row", justifyContent: "space-between", alignItems: "center", gap: isMobile ? 20 : 0 }}>
-          <img src="/images/W wayk.png" alt="Wayk" style={{ height: isMobile ? 38 : 49 }} />
+          <img src="/images/W wayk.png" alt="Wayk" style={{ height: isMobile ? 60 : 80 }} />
           <div style={{ color: "#9ca3af", fontSize: isMobile ? 14 : 15 }}>📍 LA • NYC • Miami</div>
           <a href="mailto:hello@wayk.agency" style={{ color: "#9ca3af", fontSize: 20, textDecoration: "none" }}>✉️</a>
         </div>
