@@ -40,7 +40,7 @@ function App() {
   };
 
   return (
-    <div style={{ minHeight: "100vh", backgroundColor: "#0a0a0a", color: "white", fontFamily: "system-ui, -apple-system, sans-serif", overflowX: "hidden" }}>
+    <div style={{ minHeight: "100vh", backgroundColor: "#0a0a0a", color: "white", fontFamily: "system-ui, -apple-system, sans-serif", overflowX: "hidden", width: "100vw", maxWidth: "100%", margin: 0, padding: 0 }}>
       
       {/* Nav */}
       <nav style={{ 
@@ -53,28 +53,28 @@ function App() {
         display: "flex", 
         justifyContent: "space-between", 
         alignItems: "center", 
-        backgroundColor: scrollY > 50 ? "rgba(10,10,10,0.95)" : "transparent", 
-        backdropFilter: scrollY > 50 ? "blur(20px)" : "none", 
+        backgroundColor: "transparent", 
         transition: "all 0.5s", 
-        boxSizing: "border-box" 
+        boxSizing: "border-box",
+        pointerEvents: "none"
       }}>
-        <img src="/images/W wayk.png" alt="Wayk" style={{ height: isMobile ? 60 : 80, cursor: "pointer" }} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} />
-        <div style={{ display: "flex", alignItems: "center", gap: isMobile ? 16 : 40 }}>
-          {!isMobile && <button onClick={() => scrollTo(rosterRef)} style={{ fontSize: 15, color: "#d1d5db", background: "none", border: "none", cursor: "pointer" }}>Roster</button>}
-          <button onClick={() => scrollTo(ctaRef)} style={{ padding: isMobile ? "10px 20px" : "14px 28px", backgroundColor: "white", color: "#0a0a0a", fontWeight: 600, borderRadius: 9999, fontSize: isMobile ? 13 : 15, border: "none", cursor: "pointer" }}>Work With Us</button>
+        <img src="/images/W wayk.png" alt="Wayk" style={{ height: isMobile ? 60 : 80, cursor: "pointer", pointerEvents: "auto" }} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} />
+        <div style={{ display: "flex", alignItems: "center", gap: isMobile ? 16 : 40, pointerEvents: "auto" }}>
+          {!isMobile && <button onClick={() => scrollTo(rosterRef)} style={{ fontSize: 15, color: "#d1d5db", background: "none", border: "none", cursor: "pointer", textShadow: "0 2px 8px rgba(0,0,0,0.8)" }}>Roster</button>}
+          <button onClick={() => scrollTo(ctaRef)} style={{ padding: isMobile ? "10px 20px" : "14px 28px", backgroundColor: "white", color: "#0a0a0a", fontWeight: 600, borderRadius: 9999, fontSize: isMobile ? 13 : 15, border: "none", cursor: "pointer", boxShadow: "0 4px 12px rgba(0,0,0,0.3)" }}>Work With Us</button>
         </div>
       </nav>
 
       {/* Hero */}
-      <section style={{ height: isMobile ? "auto" : "100vh", minHeight: isMobile ? "100vh" : "auto", display: "flex", flexDirection: "column", justifyContent: "center", padding: isMobile ? "120px 24px 60px" : "0", position: "relative", boxSizing: "border-box" }}>
+      <section style={{ height: isMobile ? "auto" : "100vh", minHeight: isMobile ? "100vh" : "auto", display: "flex", flexDirection: "column", justifyContent: "center", padding: isMobile ? "120px 20px 60px" : "0", position: "relative", boxSizing: "border-box", overflow: "hidden" }}>
         <div style={{ position: "absolute", width: isMobile ? 400 : 700, height: isMobile ? 400 : 700, borderRadius: "50%", background: "radial-gradient(circle, rgba(163,30,34,0.25) 0%, transparent 70%)", left: isMobile ? -200 : -250, top: 50, filter: "blur(60px)" }} />
         <div style={{ maxWidth: 1100, margin: "0 auto", position: "relative", zIndex: 10, width: "100%", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", padding: isMobile ? "0" : "0 20px" }}>
-          <h1 style={{ fontSize: isMobile ? 48 : 80, fontWeight: 700, lineHeight: 1.05, marginBottom: isMobile ? 20 : 20, letterSpacing: "-0.03em" }}>
+          <h1 style={{ fontSize: isMobile ? 42 : 80, fontWeight: 700, lineHeight: 1.05, marginBottom: isMobile ? 20 : 20, letterSpacing: "-0.03em" }}>
             <span style={{ display: "block" }}>Your brand.</span>
             <span style={{ display: "block", background: "linear-gradient(to right, #ef4444, #f87171, #dc2626)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Their feed.</span>
             <span style={{ display: "block" }}>Millions watching.</span>
           </h1>
-          <p style={{ fontSize: isMobile ? 18 : 22, color: "#9ca3af", maxWidth: 680, marginBottom: isMobile ? 32 : 30, lineHeight: 1.5 }}>We work with the creators behind the memes and trends. People who actually influence others, not just influencers. Content that performs.</p>
+          <p style={{ fontSize: isMobile ? 16 : 22, color: "#9ca3af", maxWidth: 680, marginBottom: isMobile ? 28 : 30, lineHeight: 1.5, padding: isMobile ? "0 5px" : "0" }}>We work with the creators behind the memes and trends. People who actually influence others, not just influencers. Content that performs.</p>
           <div style={{ display: "flex", flexDirection: isMobile ? "column" : "row", gap: isMobile ? 12 : 20, marginBottom: isMobile ? 40 : 30, justifyContent: "center", width: isMobile ? "100%" : "auto" }}>
             <button onClick={() => scrollTo(ctaRef)} style={{ padding: isMobile ? "16px 32px" : "16px 36px", backgroundColor: "white", color: "#0a0a0a", fontWeight: 600, borderRadius: 9999, fontSize: isMobile ? 16 : 17, border: "none", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 10 }}>
               Get Started <span style={{ fontSize: isMobile ? 18 : 20 }}>→</span>
@@ -83,16 +83,16 @@ function App() {
               See the Roster
             </button>
           </div>
-          <div style={{ display: "flex", gap: isMobile ? 40 : 80, justifyContent: "center", flexWrap: "wrap" }}>
-            <div><div style={{ fontSize: isMobile ? 40 : 52, fontWeight: 700 }}>10B+</div><div style={{ fontSize: isMobile ? 13 : 14, color: "#6b7280", textTransform: "uppercase", letterSpacing: "0.1em" }}>Views</div></div>
-            <div><div style={{ fontSize: isMobile ? 40 : 52, fontWeight: 700 }}>20M+</div><div style={{ fontSize: isMobile ? 13 : 14, color: "#6b7280", textTransform: "uppercase", letterSpacing: "0.1em" }}>Followers</div></div>
-            <div><div style={{ fontSize: isMobile ? 40 : 52, fontWeight: 700 }}>50+</div><div style={{ fontSize: isMobile ? 13 : 14, color: "#6b7280", textTransform: "uppercase", letterSpacing: "0.1em" }}>Creators</div></div>
+          <div style={{ display: "flex", gap: isMobile ? 24 : 80, justifyContent: "center", flexWrap: "wrap" }}>
+            <div><div style={{ fontSize: isMobile ? 36 : 52, fontWeight: 700 }}>10B+</div><div style={{ fontSize: isMobile ? 12 : 14, color: "#6b7280", textTransform: "uppercase", letterSpacing: "0.1em" }}>Views</div></div>
+            <div><div style={{ fontSize: isMobile ? 36 : 52, fontWeight: 700 }}>20M+</div><div style={{ fontSize: isMobile ? 12 : 14, color: "#6b7280", textTransform: "uppercase", letterSpacing: "0.1em" }}>Followers</div></div>
+            <div><div style={{ fontSize: isMobile ? 36 : 52, fontWeight: 700 }}>50+</div><div style={{ fontSize: isMobile ? 12 : 14, color: "#6b7280", textTransform: "uppercase", letterSpacing: "0.1em" }}>Creators</div></div>
           </div>
         </div>
       </section>
 
       {/* Why Us */}
-      <section style={{ padding: isMobile ? "80px 24px" : "60px 80px 140px" }}>
+      <section style={{ padding: isMobile ? "60px 20px" : "60px 80px 140px", overflow: "hidden" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <h2 style={{ fontSize: isMobile ? 40 : 64, fontWeight: 700, marginBottom: 16, textAlign: isMobile ? "center" : "left" }}>Why Wayk</h2>
           <p style={{ fontSize: isMobile ? 18 : 22, color: "#9ca3af", marginBottom: isMobile ? 40 : 60, textAlign: isMobile ? "center" : "left" }}>Work directly with the source.</p>
@@ -114,7 +114,7 @@ function App() {
       </section>
 
       {/* Roster */}
-      <section ref={rosterRef} style={{ padding: isMobile ? "80px 24px" : "140px 80px" }}>
+      <section ref={rosterRef} style={{ padding: isMobile ? "60px 20px" : "140px 80px", overflow: "hidden" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ display: "flex", flexDirection: isMobile ? "column" : "row", justifyContent: "space-between", alignItems: isMobile ? "center" : "flex-end", marginBottom: isMobile ? 40 : 60, textAlign: isMobile ? "center" : "left", gap: isMobile ? 16 : 0 }}>
             <div>
@@ -250,7 +250,7 @@ function App() {
       </section>
 
       {/* How It Works */}
-      <section style={{ padding: isMobile ? "80px 24px" : "140px 80px" }}>
+      <section style={{ padding: isMobile ? "60px 20px" : "140px 80px", overflow: "hidden" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <h2 style={{ fontSize: isMobile ? 40 : 64, fontWeight: 700, marginBottom: 16, textAlign: "center" }}>How it works</h2>
           <p style={{ fontSize: isMobile ? 18 : 22, color: "#9ca3af", marginBottom: isMobile ? 50 : 80, textAlign: "center" }}>Three steps from brief to live content.</p>
@@ -271,7 +271,7 @@ function App() {
       </section>
 
       {/* CTA */}
-      <section ref={ctaRef} style={{ padding: isMobile ? "80px 24px" : "140px 80px", position: "relative" }}>
+      <section ref={ctaRef} style={{ padding: isMobile ? "60px 20px" : "140px 80px", position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: isMobile ? 350 : 600, height: isMobile ? 350 : 600, borderRadius: "50%", background: "radial-gradient(circle, rgba(163,30,34,0.2) 0%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none" }} />
         <div style={{ maxWidth: 800, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 10 }}>
           <h2 style={{ fontSize: isMobile ? 36 : 72, fontWeight: 700, marginBottom: isMobile ? 20 : 28 }}>Ready to get started?</h2>
@@ -290,11 +290,11 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer style={{ padding: isMobile ? "40px 24px" : "50px 80px", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
+      <footer style={{ padding: isMobile ? "40px 20px" : "50px 80px", borderTop: "1px solid rgba(255,255,255,0.05)", overflow: "hidden" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", flexDirection: isMobile ? "column" : "row", justifyContent: "space-between", alignItems: "center", gap: isMobile ? 20 : 0 }}>
           <img src="/images/W wayk.png" alt="Wayk" style={{ height: isMobile ? 60 : 80 }} />
           <div style={{ color: "#9ca3af", fontSize: isMobile ? 14 : 15 }}>📍 LA • NYC • Miami</div>
-          <a href="mailto:hello@wayk.agency" style={{ color: "#9ca3af", fontSize: 20, textDecoration: "none" }}>✉️</a>
+          <a href="mailto:marketing@wayktalent.com" style={{ color: "#9ca3af", fontSize: isMobile ? 48 : 60, textDecoration: "none", lineHeight: 1 }}>✉️</a>
         </div>
         <div style={{ maxWidth: 1100, margin: "40px auto 0", paddingTop: isMobile ? 24 : 40, borderTop: "1px solid rgba(255,255,255,0.05)", textAlign: "center", fontSize: isMobile ? 12 : 14, color: "#4b5563" }}>© 2025 Wayk Talent</div>
       </footer>
